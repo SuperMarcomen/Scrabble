@@ -194,7 +194,7 @@ public class ScrabbleMap {
     }
 
     private void updateNeighbours(MapField[][] map, MapField mapField, int row, int column) {
-        if (row - 1 > 0) { // top
+        if (row > 0) { // top
             updateNeighbour(map, mapField, row - 1, column, Direction.TOP);
         }
         if (column + 1 < MAP_SIZE) { // right
@@ -203,7 +203,7 @@ public class ScrabbleMap {
         if (row + 1 < MAP_SIZE) { // bottom
             updateNeighbour(map, mapField, row + 1, column, Direction.BOTTOM);
         }
-        if (column - 1 > 0) { // left
+        if (column > 0) { // left
             updateNeighbour(map, mapField, row, column - 1, Direction.LEFT);
         }
     }
@@ -231,6 +231,10 @@ public class ScrabbleMap {
         }
     }
 
+    /**
+     * Returns the map
+     * @return the map
+     */
     public MapField[][] getMap() {
         return map;
     }
