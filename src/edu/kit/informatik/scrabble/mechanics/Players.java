@@ -22,10 +22,19 @@ public enum Players {
 
     private final String consoleRepresentation;
 
+    /**
+     * Sets the string representation of the enum
+     * @param consoleRepresentation - the string representation of the enum
+     */
     Players(String consoleRepresentation) {
         this.consoleRepresentation = consoleRepresentation;
     }
 
+    /**
+     * It returns the enum value from a string
+     * @param text - the string representing an enum value
+     * @return the enum value if found, otherwise null
+     */
     public static Players fromString(String text) {
         for (Players player : Players.values()) {
             if (player.consoleRepresentation.equalsIgnoreCase(text)) {
